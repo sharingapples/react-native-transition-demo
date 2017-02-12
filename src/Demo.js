@@ -1,35 +1,42 @@
 import React, { Component } from 'react';
 import { Animated, Easing } from 'react-native';
 
-import DemoPage from './DemoPage';
-import { createTransition, Fade, FlipX, FlipY } from 'react-native-transition';
+// Import the transition library
+import { createTransition, FlipX } from 'react-native-transition';
+
+// Just helper method to get one of the random colors
 import randomColor from './randomColor';
 
+import DemoPage from './DemoPage';
+
+
+// Create Transition component using FlipX transition
 const Transition = createTransition(FlipX);
 
 export default class Demo extends Component {
+  state = {
+    number: 1,
+    color: randomColor(),
+  }
+
   onSwipe = () => {
     this.setState({
       number: this.state.number + 1,
       color: randomColor(),
     }, () => {
+      // Transition a page with new page number and a different background
       Transition.show(
         <DemoPage number={this.state.number} color='white' backColor={this.state.color} onSwipe={this.onSwipe} />,
       );
     });
   }
 
-  state = {
-    number: 1,
-    color: randomColor(),
-  }
-
   render() {
-    const { number, color } = this.state;
+    // Render an initial state
     return (
       <Transition duration={800} onTransitioned={(item) => console.log('Complete', item) }>
-        <DemoPage number={number} color='white' backColor={color} onSwipe={this.onSwipe} />
+        <DemoPage number={1} color='white' backColor={'white'} onSwipe={this.onSwipe} />
       </Transition>
     );
   }
-}
+};

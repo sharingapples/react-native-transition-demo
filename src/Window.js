@@ -14,9 +14,12 @@ import {
 
 import Brooom from './Brooom';
 
+// Use all the transitions one after another
 const transitions = [Brooom, Fade, FlipX, FlipY, SlideLeft, SlideRight, SlideUp, SlideDown];
 const transitionIndex = 0;
-const Transition = createTransition(Brooom, Animated.timing);
+
+// Create Transition component
+const Transition = createTransition();
 
 const WIDTH = 100;
 const HEIGHT = 100;
@@ -50,16 +53,20 @@ class Window extends PureComponent {
   _timer = null;
 
   componentDidMount() {
+    // Setup a transition on a fixed interval
     this._timer = setInterval(this._change, 1000);
   }
 
   componentWillUnmount() {
+    // Clear out timers
     clearInterval(this._timer);
   }
 
   _change = () => {
     this._index = (this._index + 1) % (images.length);
     transitionIndex = (transitionIndex + 1) % transitions.length;
+
+    // Transition the images with different style one after another
     this._transition.show(
       <Image source={images[this._index]} resizeMode="contain" style={styles.imageContainer} />,
       transitions[transitionIndex]
