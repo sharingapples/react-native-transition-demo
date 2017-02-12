@@ -5,6 +5,6 @@
  */
 
 import { AppRegistry } from 'react-native';
-import Demo from './Demo';
+import Demo from './src/Demo';
 
 AppRegistry.registerComponent('TransitionDemo', () => Demo);
