@@ -42,10 +42,11 @@ const styles = StyleSheet.create({
 });
 
 const images = [
-  require('./images/react.png'),
-  require('./images/redux.png'),
+  // require('./images/react.png'),
+  //
   require('./images/nodejs.png'),
   require('./images/tux.png'),
+  require('./images/redux.png'),
 ];
 
 class Window extends PureComponent {

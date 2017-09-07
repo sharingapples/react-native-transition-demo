@@ -2931,6 +2931,10 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
+react-native-transition@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-transition/-/react-native-transition-1.1.1.tgz#3d45ca5a914407e760a7f4ed4800411a3cbf304f"
+
 react-native@0.41.2:
   version "0.41.2"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.41.2.tgz#c6f486b8450a9909e6fed2dfd2c2af946563bf4f"

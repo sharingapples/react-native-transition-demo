@@ -8,8 +8,8 @@
 	},
 	"repository": "sharingapples/react-native-transition-demo",
 	"dependencies": {
-		"react": "~15.4.0",
-		"react-native": "0.41.2",
+		"react": "^16.0.0-alpha.12",
+		"react-native": "^0.47.2",
 		"react-native-transition": "^1.1.1"
 	},
 	"devDependencies": {
